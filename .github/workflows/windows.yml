@@ -44,7 +44,7 @@ jobs:
           cd .\jax
           python -m pip install numpy
           python build/build.py --enable_cuda `
-            --cuda_path="$($Env:ProgramFiles)/NVIDIA GPU Computing Toolkit/CUDA/v11.6" `
-            --cudnn_path="$($Env:ProgramFiles)/NVIDIA GPU Computing Toolkit/CUDA/v11.6" `
+            --cuda_path="$($Env:ProgramFiles)/NVIDIA GPU Computing Toolkit/CUDA/v11.3" `
+            --cudnn_path="$($Env:ProgramFiles)/NVIDIA GPU Computing Toolkit/CUDA/v11.3" `
             --cuda_version="11.3" `
             --cudnn_version="8.4.1"
