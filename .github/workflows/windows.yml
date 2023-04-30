@@ -42,6 +42,7 @@ jobs:
         shell: pwsh
         run: |
           cd .\jax
+          python -m pip install numpy
           python build/build.py --enable_cuda `
             --cuda_path="$($Env:ProgramFiles)/NVIDIA GPU Computing Toolkit/CUDA/v11.6" `
             --cudnn_path="$($Env:ProgramFiles)/NVIDIA GPU Computing Toolkit/CUDA/v11.6" `
