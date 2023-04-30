@@ -8,7 +8,7 @@
 #}
 
 Write-Output "Downloading cudnn"
-Invoke-WebRequest https://developer.download.nvidia.com/compute/redist/cudnn/v8.4.1/local_installers/11.3/cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive.zip -OutFile cudnn.zip | Out-Null
+Invoke-WebRequest https://developer.download.nvidia.com/compute/redist/cudnn/v8.4.1/local_installers/11.6/cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive.zip -OutFile cudnn.zip | Out-Null
 
 if(Test-Path -Path ".\cudnn.zip"){
   Write-Output "Completed"
