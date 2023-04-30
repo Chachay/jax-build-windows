@@ -1,4 +1,4 @@
-name: Windows Build
+name: check Env
 on: [workflow_dispatch]
 jobs:
   build:
