@@ -8,7 +8,7 @@
 #}
 
 Write-Output "Downloading cudnn"
-Invoke-WebRequest https://developer.download.nvidia.com/compute/redist/cudnn/v8.4.1/local_installers/11.6/cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive.zip -OutFile cudnn.zip | Out-Null
+Invoke-WebRequest https://developer.download.nvidia.com/compute/redist/cudnn/v8.5.0/local_installers/11.7/cudnn-windows-x86_64-8.5.0.96_cuda11-archive.zip -OutFile cudnn.zip | Out-Null
 
 if(Test-Path -Path ".\cudnn.zip"){
   Write-Output "Completed"
@@ -18,12 +18,13 @@ if(Test-Path -Path ".\cudnn.zip"){
 }
 Expand-Archive -Path cudnn.zip -DestinationPath "d:\a\cudnn"
 
-Copy-Item -Path "d:\a\cudnn\cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive\bin\*.*" -Destination "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.3\bin"
-Copy-Item -Path "d:\a\cudnn\cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive\lib\*.*" -Destination "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.3\lib"
-Copy-Item -Path "d:\a\cudnn\cudnn-windows-x86_64-8.4.1.50_cuda11.6-archive\include\*.*" -Destination "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.3\include"
+Copy-Item -Path "d:\a\cudnn\cudnn-windows-x86_64-8.5.0.96_cuda11-archive\bin\*.*" -Destination "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.7\bin"
+Copy-Item -Path "d:\a\cudnn\cudnn-windows-x86_64-8.5.0.96_cuda11-archive\lib\*.*" -Destination "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.7\lib"
+Copy-Item -Path "d:\a\cudnn\cudnn-windows-x86_64-8.5.0.96_cuda11-archive\include\*.*" -Destination "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.7\include"
 
 #Write-Output "CUDA Installation completed "
 
 #$env:CUDA_PATH = "C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.3"
 #echo "CUDA_PATH=$env:CUDA_PATH" | Out-File -FilePath $env:GITHUB_ENV -Encoding utf8 -Append
 #echo "$env:CUDA_PATH/bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+
