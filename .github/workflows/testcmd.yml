@@ -17,4 +17,4 @@ jobs:
       - name: check Env
         shell: pwsh
         run: |
-          realpath -v
+          realpath --help
