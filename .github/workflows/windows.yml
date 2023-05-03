@@ -8,7 +8,7 @@ jobs:
         include:
           - os: windows-2019
             cuda: "11.7.1"
-            compiler: "Visual Studio 17 2022"
+            compiler: "Visual Studio 16 2019"
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
@@ -36,13 +36,13 @@ jobs:
       - name: check Env
         shell: pwsh
         run: |
-          Copy-Item -Path "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.7\extras\visual_studio_integration\MSBuildExtensions\*" `
-                    -Destination "$(${Env:ProgramFiles})\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\BuildCustomizations"
           Write-Output "---- NVCC Output ----"
           nvcc -V
           Write-Output "---------------------"
           Write-Output "CUDA PATH: $($env:CUDA_PATH)"
           Write-Output "Path: $($env:Path)"
+#         Copy-Item -Path "$($Env:ProgramFiles)\NVIDIA GPU Computing Toolkit\CUDA\v11.7\extras\visual_studio_integration\MSBuildExtensions\*" `
+#         -Destination "$(${Env:ProgramFiles})\Microsoft Visual Studio\2019\Enterprise\MSBuild\Microsoft\VC\v160\BuildCustomizations"
 
       - name: build jaxlib
         id: configure
