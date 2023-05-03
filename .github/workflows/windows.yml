@@ -15,6 +15,13 @@ jobs:
         with:
           submodules: recursive
 
+      - name: configure Pagefile
+        uses: al-cheb/configure-pagefile-action@v1.2
+        with:
+          minimum-size: 8GB
+          maximum-size: 16GB
+          disk-root: "C:"
+
       - uses: Jimver/cuda-toolkit@v0.2.10
         id: cuda-toolkit
         with:
