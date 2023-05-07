@@ -46,7 +46,6 @@ jobs:
         shell: pwsh
         run: |
           Write-Output "---- NVCC Output ----"
-          nvcc -V
           Write-Output "---------------------"
           Write-Output "CUDA PATH: $($env:CUDA_PATH)"
           Write-Output "Path: $($env:Path)"
